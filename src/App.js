@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Main from "./Main";
 
 const LeftBox = styled.div`
-  background-color: brown;
+  background-color: #E8ECEF;
   position: absolute;
   top: 162px;
   width: 160px;
@@ -13,10 +13,10 @@ const LeftBox = styled.div`
 const CenterBox = styled.div`
   width: 70%;
   margin: 0 175px;
+  background-color: #E8ECEF;
 `;
 const RightBox = styled.div`
-  background-color: orange;
-  position: fixed;
+  background-color: #E8ECEF;
   top: 162px;
   left: 1444px;
   width: 160px;
