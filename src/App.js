@@ -7,8 +7,12 @@ const LeftBox = styled.div`
   position: absolute;
   top: 162px;
   width: 160px;
-  height: 606px;
+  height: 640px;
   margin: 0 auto;
+  img {
+    margin-top: 20px;
+    width: 100%;
+  }
 `;
 const CenterBox = styled.div`
   width: 70%;
@@ -27,7 +31,8 @@ const RightBox = styled.div`
 export default () => {
   return (
     <>
-      <LeftBox></LeftBox>
+      <LeftBox><img src="https://img.jobkorea.co.kr/images/JK_Bnnr/TimeBoard/bann_190x250.jpg"></img>
+      </LeftBox>
       <CenterBox>
         <Main />
       </CenterBox>

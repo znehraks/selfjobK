@@ -11,15 +11,51 @@ const Wrapper = styled.div`
 
 const FirstContainer = styled.div`
   width: 1260px;
-  height: 606px;
+  height: 640px;
   background-color: #e8ecef;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ArticleBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 1260px;
+  height: 580px;
+  background-color: #e8ecef;
+`;
+
+const BottomBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 1260px;
+  height: 60px;
+  background-color: #e8ecef;
+`;
+
+const FCBottom = styled.div`
+  width: 1260px;
+  height: 60px;
+  margin: 0px 0px 5px 0px;
+  background-color: #fff;
   display: flex;
   flex-direction: row;
 `;
 
+const FCBottomContent = styled.div`
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 60%;
+  }
+`;
+
 const FCArticle1 = styled.div`
   width: 900px;
-  height: 606px;
+  height: 640px;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -28,16 +64,19 @@ const FCArticle1 = styled.div`
 const Banner = styled.div`
   width: 750px;
   height: 110px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-image: url("https://apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/200427_skhyfive_mb/200427_skhyfive_752x110_02_a.jpg");
 `;
 
 const FCNav = styled.div`
-  width: 750px;
+  width: 748px;
   height: 46px;
   background-color: #fff;
   display: flex;
   flex-direction: row;
+  position: relative;
+  left: 1px;
 `;
 
 const FCNavLi = styled.div`
@@ -84,7 +123,7 @@ const FCNavSelect = styled.div`
 
 const FCGrid = styled.div`
   width: 750px;
-  height: 400px;
+  height: 358px;
   display: flex;
   flex-direction: column;
 `;
@@ -143,12 +182,13 @@ const FCGridColumnCompanyName = styled.span`
 `;
 
 const FCGridBottom = styled.div`
-  width: 750px;
+  width: 748px;
   height: 50px;
   background-color: #fff;
   display: flex;
   flex-direction: row;
   position: relative;
+  left: 1px;
 `;
 
 const FCGridBottomContent = styled.div`
@@ -168,26 +208,6 @@ const FCGridBottomContent = styled.div`
   :hover {
     background-color: #3399ff;
     color: #fff;
-  }
-`;
-
-const FCBottom = styled.div`
-  width: 750px;
-  height: 60px;
-  margin: 10px 0px 5px 0px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-`;
-
-const FCBottomContent = styled.div`
-  flex: 1;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 60%;
   }
 `;
 
@@ -211,7 +231,7 @@ const RightButton = styled.div``;
 
 const RankContainer = styled.div`
   width: 230px;
-  height: 420px;
+  height: 400px;
 `;
 
 const RankHeader = styled.div`
@@ -245,7 +265,7 @@ const RightArrow = styled.div`
 
 const Rank = styled.div`
   width: 230px;
-  height: 368px;
+  height: 362px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -366,7 +386,7 @@ const ProfileGraphContentColumn = styled.div`
 
 const EmptyBox = styled.div`
   width: 100%;
-  height: 193px;
+  height: 185px;
   margin-top: 5px;
   background-color: #fff;
 `;
@@ -396,13 +416,15 @@ const SecondContainerBanner = styled.div`
 const SecondContainerTitle = styled.div`
   width: 1260px;
   height: 50px;
-  background-color: #555;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #fff;
 `;
 
 const SCGrid = styled.div`
   width: 1260px;
   height: 1750px;
-  background-color: #222;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
 `;
@@ -410,163 +432,315 @@ const SCGrid = styled.div`
 const SCGridRow = styled.div`
   width: 1260px;
   height: 15%;
-  margin: 10px 0px;
   :first-child {
     margin-top: 20px;
   }
-  background-color: darkblue;
+  background-color: #fff;
   display: flex;
   flex-direction: row;
 `;
 
 const SCGridColumn = styled.div`
-  width: 24%;
-  height: 90%;
-  margin: 15px 10px 10px 10px;
-  :first-child {
-    margin-left: 20px;
-  }
-  :last-child {
-    margin-right: 20px;
-  }
-  background-color: blanchedalmond;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #3399ff;
+  display: flex;
+  flex-direction: column;
 `;
+
+const SCGridImgBox = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px 0px;
+`;
+const SCGridSpanBox = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+`;
+const CompanyName = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+`;
+const Content = styled.div`
+  font-size: 17px;
+  font-weight: 800;
+`;
+const SCGridSpanBottom = styled.div`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+const DueDate = styled.div`
+  color: rgba(0,0,0,0.4);
+  font-size: 12px;
+`;
+
+const Star = styled.div``;
 
 export default () => {
   return (
     <Wrapper>
       <Header />
       <FirstContainer>
-        <FCArticle1>
-          <Banner />
-          <FCNav>
-            <FCNavLi>공채속보</FCNavLi>
-            <FCNavLi>기업분석</FCNavLi>
-            <FCNavLi>직무분석</FCNavLi>
-            <FCNavLi>채용설명회</FCNavLi>
-            <FCNavLi>합격스펙</FCNavLi>
-            <FCNavLi>합격자소서</FCNavLi>
-            <FCNavLi>인적성.면접</FCNavLi>
-            <FCNavSelect>신입</FCNavSelect>
-            <FCNavSelect>경력</FCNavSelect>
-          </FCNav>
-          <FCGrid>
-            <FCGridRow>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-            </FCGridRow>
-            <FCGridRow>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-              <FCGridColumn>
-                <FCGridColumnImgContainer>
-                  <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
-                </FCGridColumnImgContainer>
-                <FCGridColumnSpanContainer>
-                  <FCGridColumnSpan>
-                    2020년도 상반기 각 부문 신입사원 채용
-                  </FCGridColumnSpan>
-                  <FCGridColumnCompanyName>
-                    대림산업(주)
-                  </FCGridColumnCompanyName>
-                </FCGridColumnSpanContainer>
-              </FCGridColumn>
-            </FCGridRow>
-            <FCGridBottom>
-              <FCGridBottomContent>#1000대기업 공채</FCGridBottomContent>
-              <FCGridBottomContent>#인턴채용</FCGridBottomContent>
-              <FCGridBottomContent>#공채달력</FCGridBottomContent>
-              <FCGridBottomContent>#Live공채소식</FCGridBottomContent>
-              <FCGridBottomContent>더보기></FCGridBottomContent>
-            </FCGridBottom>
-          </FCGrid>
+        <ArticleBox>
+          <FCArticle1>
+            <Banner />
+            <FCNav>
+              <FCNavLi>공채속보</FCNavLi>
+              <FCNavLi>기업분석</FCNavLi>
+              <FCNavLi>직무분석</FCNavLi>
+              <FCNavLi>채용설명회</FCNavLi>
+              <FCNavLi>합격스펙</FCNavLi>
+              <FCNavLi>합격자소서</FCNavLi>
+              <FCNavLi>인적성.면접</FCNavLi>
+              <FCNavSelect>신입</FCNavSelect>
+              <FCNavSelect>경력</FCNavSelect>
+            </FCNav>
+            <FCGrid>
+              <FCGridRow>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+              </FCGridRow>
+              <FCGridRow>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+                <FCGridColumn>
+                  <FCGridColumnImgContainer>
+                    <img src="https://img.jobkorea.co.kr/Images/Logo/106/d/i/dichq007_106.gif"></img>
+                  </FCGridColumnImgContainer>
+                  <FCGridColumnSpanContainer>
+                    <FCGridColumnSpan>
+                      2020년도 상반기 각 부문 신입사원 채용
+                    </FCGridColumnSpan>
+                    <FCGridColumnCompanyName>
+                      대림산업(주)
+                    </FCGridColumnCompanyName>
+                  </FCGridColumnSpanContainer>
+                </FCGridColumn>
+              </FCGridRow>
+              <FCGridBottom>
+                <FCGridBottomContent>#1000대기업 공채</FCGridBottomContent>
+                <FCGridBottomContent>#인턴채용</FCGridBottomContent>
+                <FCGridBottomContent>#공채달력</FCGridBottomContent>
+                <FCGridBottomContent>#Live공채소식</FCGridBottomContent>
+                <FCGridBottomContent>더보기></FCGridBottomContent>
+              </FCGridBottom>
+            </FCGrid>
+          </FCArticle1>
+          <FCArticle2>
+            <ImageContainer>
+              <img src="https://file1.jobkorea.co.kr/main/Bnnr/Imgs/%ED%99%88%EB%B0%B0%EB%84%88_top100.png"></img>
+            </ImageContainer>
+            <RankContainer>
+              <RankHeader>
+                <RankTitle>채용 TOP 100</RankTitle>
+                <Current>1/4</Current>
+                <LeftArrow>&lt;</LeftArrow>
+                <RightArrow>&gt;</RightArrow>
+              </RankHeader>
+              <Rank>
+                <RankList>
+                  <RankListSpan>1. 동원그룹</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>2. 현대자동차</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>3. 팔렛티그룹</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>4. 팔렛티푸드</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>5. 현대그룹</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>6. DB그룹</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>7. 카카오</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>8. 네이버</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>9. 한국수자원공사</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+                <RankList>
+                  <RankListSpan>10. 동원그룹</RankListSpan>
+                  <RankListChange>-</RankListChange>
+                </RankList>
+              </Rank>
+            </RankContainer>
+          </FCArticle2>
+          <FCArticle3>
+            <ProfileContainer>
+              <ProfileContent>
+                <ProfileContentBox>
+                  <NameSpan>유정민님</NameSpan>
+                  <LinkSpan>이력서 작성하기</LinkSpan>
+                </ProfileContentBox>
+                <ProfileContentBox>
+                  <AuthButton>로그아웃</AuthButton>
+                </ProfileContentBox>
+              </ProfileContent>
+              <ProfileNav>
+                <ProfileNavContent>지원현황</ProfileNavContent>
+                <ProfileNavContent>열람기업</ProfileNavContent>
+                <ProfileNavContent>스크랩</ProfileNavContent>
+                <ProfileNavContent>스마트매치</ProfileNavContent>
+              </ProfileNav>
+            </ProfileContainer>
+            <ProfileGraph>
+              <ProfileGraphContentRow>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+              </ProfileGraphContentRow>
+              <ProfileGraphContentRow>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+              </ProfileGraphContentRow>
+              <ProfileGraphContentRow>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+                <ProfileGraphContentColumn>
+                  <img src={button}></img>
+                  <span>1000대기업</span>
+                </ProfileGraphContentColumn>
+              </ProfileGraphContentRow>
+            </ProfileGraph>
+            <EmptyBox></EmptyBox>
+          </FCArticle3>
+        </ArticleBox>
+        <BottomBox>
           <FCBottom>
             <FCBottomContent>
               <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
@@ -583,144 +757,122 @@ export default () => {
             <FCBottomContent>
               <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
             </FCBottomContent>
+            <FCBottomContent>
+              <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
+            </FCBottomContent>
+            <FCBottomContent>
+              <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
+            </FCBottomContent>
+            <FCBottomContent>
+              <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
+            </FCBottomContent>
+            <FCBottomContent>
+              <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
+            </FCBottomContent>
+            <FCBottomContent>
+              <img src="http://img.jobkorea.co.kr/Images/Logo/160/m/e/medialog4k_160.gif"></img>
+            </FCBottomContent>
           </FCBottom>
-        </FCArticle1>
-        <FCArticle2>
-          <ImageContainer>
-            <img src="https://file1.jobkorea.co.kr/main/Bnnr/Imgs/%ED%99%88%EB%B0%B0%EB%84%88_top100.png"></img>
-          </ImageContainer>
-          <RankContainer>
-            <RankHeader>
-              <RankTitle>채용 TOP 100</RankTitle>
-              <Current>1/4</Current>
-              <LeftArrow>&lt;</LeftArrow>
-              <RightArrow>&gt;</RightArrow>
-            </RankHeader>
-            <Rank>
-              <RankList>
-                <RankListSpan>1. 동원그룹</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>2. 현대자동차</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>3. 팔렛티그룹</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>4. 팔렛티푸드</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>5. 현대그룹</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>6. DB그룹</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>7. 카카오</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>8. 네이버</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>9. 한국수자원공사</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-              <RankList>
-                <RankListSpan>10. 동원그룹</RankListSpan>
-                <RankListChange>-</RankListChange>
-              </RankList>
-            </Rank>
-          </RankContainer>
-        </FCArticle2>
-        <FCArticle3>
-          <ProfileContainer>
-            <ProfileContent>
-              <ProfileContentBox>
-                <NameSpan>유정민님</NameSpan>
-                <LinkSpan>이력서 작성하기</LinkSpan>
-              </ProfileContentBox>
-              <ProfileContentBox>
-                <AuthButton>로그아웃</AuthButton>
-              </ProfileContentBox>
-            </ProfileContent>
-            <ProfileNav>
-              <ProfileNavContent>지원현황</ProfileNavContent>
-              <ProfileNavContent>열람기업</ProfileNavContent>
-              <ProfileNavContent>스크랩</ProfileNavContent>
-              <ProfileNavContent>스마트매치</ProfileNavContent>
-            </ProfileNav>
-          </ProfileContainer>
-          <ProfileGraph>
-            <ProfileGraphContentRow>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-            </ProfileGraphContentRow>
-            <ProfileGraphContentRow>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-            </ProfileGraphContentRow>
-            <ProfileGraphContentRow>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-              <ProfileGraphContentColumn>
-                <img src={button}></img>
-                <span>1000대기업</span>
-              </ProfileGraphContentColumn>
-            </ProfileGraphContentRow>
-          </ProfileGraph>
-          <EmptyBox></EmptyBox>
-        </FCArticle3>
+        </BottomBox>
       </FirstContainer>
 
       <SecondContainer>
         <SecondContainerDistruct>
-          <SecondContainerTitle></SecondContainerTitle>
+          <SecondContainerTitle>VVIP 채용관</SecondContainerTitle>
           <SCGrid>
             <SCGridRow>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
+              <SCGridColumn>
+                <SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox>
+              </SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
             </SCGridRow>
             <SCGridRow>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
-              <SCGridColumn></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
+              <SCGridColumn><SCGridImgBox>
+                  <img src="https://img11.jobkorea.kr/Images/Logo/180/d/w/dwgroup_180.gif?20200501233009"></img>
+                </SCGridImgBox>
+                <SCGridSpanBox>
+                  <CompanyName>동원그룹</CompanyName>
+                  <Content>2020 상반기 채용연계형 인턴모집</Content>
+                  <SCGridSpanBottom>
+                    <DueDate>D-18</DueDate>
+                    <Star>별</Star>
+                  </SCGridSpanBottom>
+                </SCGridSpanBox></SCGridColumn>
             </SCGridRow>
             <SCGridRow>
               <SCGridColumn></SCGridColumn>
